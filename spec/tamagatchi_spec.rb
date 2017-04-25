@@ -12,6 +12,20 @@ describe(Tamagatchi) do
     end
   end
 
+  describe(".all") do
+      it("is empty at first") do
+        expect(Tamagatchi.all()).to(eq([]))
+      end
+    end
+
+    describe("#save") do
+        it("adds a location to the array of saved location") do
+        test_tamagatchi = Tamagatchi.new("Vancouver")
+        test_tamagatchi.save()
+        expect(Tamagatchi.all()).to(eq([test_tamagatchi]))
+        end
+      end
+
   describe("#is_alive") do
     it("is alive if the food level is above 0") do
       my_pet = Tamagatchi.new("lil dragon")

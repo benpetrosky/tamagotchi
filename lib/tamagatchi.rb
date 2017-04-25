@@ -1,5 +1,7 @@
 class Tamagatchi
 
+@@all_tamagatchis = []
+
   define_method(:initialize) do |name|
     @name = name
     @food_level = 10
@@ -32,17 +34,10 @@ class Tamagatchi
   define_method(:time_passes) do
     @food_level -= 1
   end
+  define_singleton_method(:all) do
+  @@all_tamagatchis
 end
-
-#   define_method(:food_level) do
-#     10
-#   end
-#   define_method(:activity_level) do
-#     10
-#   end
-# end
- #
- #  tams =
- #  {
- #   cat: {hunger:10, sleep:10, activity:10}, dog: {hunger:10, sleep:10, activity:10}, snake: {hunger:10, sleep:10, activity:10}
- # }
+  define_method(:save) do
+  @@all_tamagatchis.push(self)
+  end
+end
