@@ -40,4 +40,8 @@ end
   define_method(:save) do
   @@all_tamagatchis.push(self)
   end
+  define_method(:feed) do
+    @food_level += 3
+    @sleep_level -= 2
+  end
 end

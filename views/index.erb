@@ -6,10 +6,17 @@
 
 <ul>
   <% @name.each() do |tamagatchi| %>
-    <li><%= tamagatchi.name() %></li>
+    <li>Name: <%= tamagatchi.name() %></li>
+    <li>Food Level: <%= tamagatchi.food_level() %></li>
+    <li>Sleep Level: <%= tamagatchi.sleep_level() %></li>
+    <li>Activity Level: <%= tamagatchi.activity_level() %></li>
   <% end %>
 </ul>
-
+<form action="/user_choice" method="post">
+<button name="eat" type="submit" class="btn-success">Eat</button>
+<button type="submit" class="btn-success">Sleep</button>
+<button type="submit" class="btn-success">Exercise</button>
+</form>
 <form action="/tamagatchi_form" method="post">
   <div class="form-group">
     <label for="names">Tell us the name of your Tamagotchi</label>
